@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "tdd": "ava --watch",
-    "test": "ava"
+    "test": "ava",
+    "jtdd": "jasmine-node --autotest --color spec",
+    "jtest": "jasmine-node --color spec"
   },
   "author": "Sanghyun Lee",
   "license": "MIT",
   "dependencies": {
     "ava": "^0.22.0",
+    "jasmine-node": "^1.14.5",
+    "lodash": "^4.17.4",
     "node-fetch": "^1.7.2"
   }
 }
