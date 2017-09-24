@@ -18,3 +18,12 @@ test('get test', (t) => {
       t.is(json.headers.Authorization, `Bearer abc`);
     });
 });
+
+test('post test', async (t) => {
+  const json = await fetch('http://httpbin.org/post', { method: 'POST', body: 'body' })
+    .then(function(res) {
+      return res.json();
+    });
+
+  t.is(json.data, `body`);
+});
