@@ -13,6 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "ava": "^0.22.0",
+    "check-types": "^7.3.0",
     "jasmine-node": "^1.14.5",
     "lodash": "^4.17.4",
     "node-fetch": "^1.7.2",
