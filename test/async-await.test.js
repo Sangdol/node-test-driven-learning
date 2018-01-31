@@ -39,3 +39,8 @@ test('seqeuntial await', (t) => {
     t.is(v, 60);
   });
 });
+
+test('async test function', async (t) => {
+  const v = await resolveAfter2Seconds(20);
+  t.is(v, 20);
+});
