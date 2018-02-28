@@ -1,4 +1,22 @@
 const _ = require('lodash');
+
+describe('timer', function() {
+  async function timer(n) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, n);
+    });
+  }
+
+  it ('should wait for timer', async function(done) {
+    const start = Date.now();
+    await timer(1000);
+    expect(Date.now() - start).toBeGreaterThan(999);
+    done();
+  });
+});
+
 /**
  * https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise
  * http://www.html5rocks.com/en/tutorials/es6/promises/
