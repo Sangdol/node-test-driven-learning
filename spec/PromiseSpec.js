@@ -1,5 +1,14 @@
 const _ = require('lodash');
 
+describe('async func without return', function() {
+  async function asyncFunc() {}
+
+  it('should return undefined', async function(done) {
+    expect(await asyncFunc()).toBe(undefined);
+    done();
+  });
+});
+
 describe('timer', function() {
   async function timer(n) {
     return new Promise((resolve) => {
@@ -9,7 +18,7 @@ describe('timer', function() {
     });
   }
 
-  it ('should wait for timer', async function(done) {
+  it('should wait for timer', async function(done) {
     const start = Date.now();
     await timer(1000);
     expect(Date.now() - start).toBeGreaterThan(999);
