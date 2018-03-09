@@ -1,5 +1,43 @@
 const _ = require('lodash');
 
+describe('exception handling', function() {
+  it('should swallow exception it no catch', async function(done) {
+    /**
+     * (node:61520) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): Error
+     * (node:61520) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+     */
+    // This test is commented to prevent warning log.
+    //Promise.resolve()
+      //.then(() => {
+        //throw new Error();
+      //});
+    done();
+  });
+
+  it('should throw exception with unhandledRejection', async function(done) {
+    Promise.resolve()
+      .then(() => {
+        throw new Error('wow');
+      });
+      /**
+       * https://medium.com/@dtinth/making-unhandled-promise-rejections-crash-the-node-js-process-ffc27cfcc9dd
+       *
+       * No information about the point of error
+       *
+       * Error wow
+       *  at Promise.resolve.then (/Users/slee/projects/node-test-driven-learning/spec/PromiseSpec.js:20:15)
+       *  at <anonymous>
+       *  at process._tickCallback (internal/process/next_tick.js:188:7)
+       */
+    process.on('unhandledRejection', up => {
+      //let util = require('util');
+      //console.log(util.inspect(up));
+      expect(up instanceof Error).toBeTruthy();
+      done()
+    });
+  });
+});
+
 describe('async func without return', function() {
   async function asyncFunc() {}
 
