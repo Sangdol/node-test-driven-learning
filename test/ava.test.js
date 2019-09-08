@@ -15,6 +15,7 @@ import test from 'ava';
  */
 test('Assertions', (t) => {
   t.is(1, 1);
+  t.deepEqual({a: 1, b: 2}, {a: 1, b: 2});
 });
 
 /**
