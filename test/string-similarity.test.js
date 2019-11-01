@@ -5,7 +5,7 @@ import test from 'ava';
 
 const stringSimilarity = require('string-similarity');
 
-test('', (t) => {
+test('compareTwoStrings test', (t) => {
   t.is(stringSimilarity.compareTwoStrings('a', 'A'), 1);
   t.is(stringSimilarity.compareTwoStrings('A', 'A'), 1);
   t.is(stringSimilarity.compareTwoStrings('A', 'Ä'), 0);
