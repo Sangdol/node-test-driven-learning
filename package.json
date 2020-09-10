@@ -19,7 +19,7 @@
     "jasmine-node": "^3.0.0",
     "lazy.js": "^0.5.0",
     "lodash": "^4.17.15",
-    "node-fetch": "^1.7.2",
+    "node-fetch": "^2.6.1",
     "run-jxa": "^2.0.0",
     "string-similarity": "^1.2.0",
     "sugar-date": "^2.0.6"
