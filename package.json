@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "ava": "^2.4.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "check-types": "^7.3.0",
     "cycle": "^1.0.3",
     "jasmine-node": "^3.0.0",
